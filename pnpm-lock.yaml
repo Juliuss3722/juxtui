@@ -45,6 +45,9 @@ importers:
       '@nuxt/schema':
         specifier: ^4.5.2
         version: 4.5.2
+      '@types/node':
+        specifier: ^26.6.3
+        version: 26.6.3
       '@vitejs/plugin-vue':
         specifier: ^6.0.9
         version: 6.0.9(vite@8.3.1(@types/node@26.6.3)(jiti@2.7.0))(vue@3.5.43(typescript@6.0.3))
