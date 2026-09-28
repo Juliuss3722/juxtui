@@ -1,0 +1,12 @@
+/*
+ * Juxt's component styles live in the `juxt` cascade layer. The order below
+ * puts it above CSS resets (Tailwind's `base`) and below utilities, so a
+ * class like `hidden` or `w-full` on a component always wins | and any
+ * unlayered CSS of your own does too. Without Tailwind the extra names are
+ * simply empty layers.
+ */
+@layer theme, base, juxt, components, utilities;
+
+@import './tokens.css';
+@import './base.css';
+@import './control.css';

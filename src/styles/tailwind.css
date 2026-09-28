@@ -1,0 +1,74 @@
+/*
+ * Juxt × Tailwind CSS v4
+ *
+ * Maps Juxt tokens onto Tailwind's theme so utilities speak the same language
+ * as the components: `bg-surface`, `text-fg-muted`, `border-border`,
+ * `rounded-md`, `duration-normal`, `ease-standard`.
+ *
+ *   @import 'tailwindcss';
+ *   @import '@juxtui/ui/tailwind.css';
+ */
+
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --color-bg: var(--juxt-bg);
+  --color-surface: var(--juxt-surface);
+  --color-surface-raised: var(--juxt-surface-raised);
+  --color-surface-sunken: var(--juxt-surface-sunken);
+  --color-surface-hover: var(--juxt-surface-hover);
+  --color-surface-active: var(--juxt-surface-active);
+  --color-border: var(--juxt-border);
+  --color-border-subtle: var(--juxt-border-subtle);
+  --color-border-strong: var(--juxt-border-strong);
+  --color-fg: var(--juxt-fg);
+  --color-fg-secondary: var(--juxt-fg-secondary);
+  --color-fg-muted: var(--juxt-fg-muted);
+  --color-fg-disabled: var(--juxt-fg-disabled);
+  --color-ink: var(--juxt-ink);
+  --color-ink-fg: var(--juxt-ink-fg);
+  --color-accent: var(--juxt-accent);
+  --color-accent-hover: var(--juxt-accent-hover);
+  --color-accent-text: var(--juxt-accent-text);
+  --color-accent-soft: var(--juxt-accent-soft);
+  --color-danger: var(--juxt-danger);
+  --color-danger-text: var(--juxt-danger-text);
+  --color-danger-soft: var(--juxt-danger-soft);
+  --color-warning: var(--juxt-warning);
+  --color-warning-text: var(--juxt-warning-text);
+  --color-info: var(--juxt-info);
+  --color-info-text: var(--juxt-info-text);
+
+  --font-sans: var(--juxt-font-sans);
+  --font-mono: var(--juxt-font-mono);
+
+  --radius-xs: var(--juxt-radius-xs);
+  --radius-sm: var(--juxt-radius-sm);
+  --radius-md: var(--juxt-radius-md);
+  --radius-lg: var(--juxt-radius-lg);
+
+  --shadow-xs: var(--juxt-shadow-xs);
+  --shadow-sm: var(--juxt-shadow-sm);
+  --shadow-md: var(--juxt-shadow-md);
+  --shadow-lg: var(--juxt-shadow-lg);
+
+  --ease-standard: var(--juxt-ease-standard);
+  --ease-out: var(--juxt-ease-out);
+  --ease-in: var(--juxt-ease-in);
+}
+
+@utility duration-instant {
+  transition-duration: var(--juxt-duration-instant);
+}
+
+@utility duration-fast {
+  transition-duration: var(--juxt-duration-fast);
+}
+
+@utility duration-normal {
+  transition-duration: var(--juxt-duration-normal);
+}
+
+@utility duration-slow {
+  transition-duration: var(--juxt-duration-slow);
+}

@@ -1,0 +1,102 @@
+{
+  "name": "@juxtui/ui",
+  "version": "0.8.0",
+  "description": "Accessible, polished UI components for Nuxt & Vue 3.",
+  "license": "MIT",
+  "author": "Julius K.",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./editor": "./src/editor/index.ts",
+    "./nuxt": "./src/nuxt.ts",
+    "./style.css": "./src/styles/index.css",
+    "./tokens.css": "./src/styles/tokens.css",
+    "./tailwind.css": "./src/styles/tailwind.css"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      },
+      "./editor": {
+        "types": "./dist/editor/index.d.ts",
+        "import": "./dist/editor.js"
+      },
+      "./nuxt": {
+        "types": "./dist/nuxt.d.ts",
+        "import": "./dist/nuxt.js"
+      },
+      "./style.css": "./dist/style.css",
+      "./tokens.css": "./dist/tokens.css",
+      "./tailwind.css": "./dist/tailwind.css"
+    },
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "vue3",
+    "nuxt",
+    "nuxt3",
+    "vue-components",
+    "nuxt-components",
+    "vue-ui",
+    "nuxt-ui",
+    "ui-library",
+    "component-library",
+    "design-system",
+    "typescript",
+    "accessible",
+    "accessibility",
+    "a11y",
+    "tailwind",
+    "tailwindcss",
+    "dark-mode"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@nuxt/kit": ">=3.15.0",
+    "vue": "^3.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@nuxt/kit": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.8.0",
+    "@tiptap/core": "^3.31.3",
+    "@tiptap/extension-highlight": "^3.31.3",
+    "@tiptap/extension-list": "^3.31.3",
+    "@tiptap/extension-typography": "^3.31.3",
+    "@tiptap/extensions": "^3.31.3",
+    "@tiptap/pm": "^3.31.3",
+    "@tiptap/starter-kit": "^3.31.3",
+    "@tiptap/suggestion": "^3.31.3",
+    "@tiptap/vue-3": "^3.31.3"
+  },
+  "devDependencies": {
+    "@nuxt/kit": "^4.5.2",
+    "@nuxt/schema": "^4.5.2",
+    "@vitejs/plugin-vue": "^6.0.9",
+    "@vue/test-utils": "^2.5.1",
+    "happy-dom": "^20.14.5",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2",
+    "vue": "^3.5.43",
+    "vue-tsc": "^3.3.11"
+  }
+}

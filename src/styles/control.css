@@ -1,0 +1,102 @@
+@layer juxt {
+/*
+ * `.j-control` is the shared frame for Input, Textarea and the Select trigger.
+ */
+.j-control {
+  --j-control-height: var(--juxt-control-md);
+  --j-control-px: var(--juxt-space-2-5);
+  --j-control-font: var(--juxt-text-md);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--juxt-space-2);
+  min-height: var(--j-control-height);
+  padding: 0 var(--j-control-px);
+  border: 1px solid var(--juxt-border);
+  border-radius: var(--juxt-radius-sm);
+  background: var(--juxt-surface);
+  box-shadow: var(--juxt-shadow-xs);
+  color: var(--juxt-fg);
+  font-family: var(--juxt-font-sans);
+  font-size: var(--j-control-font);
+  cursor: text;
+  transition:
+    border-color var(--juxt-duration-fast) var(--juxt-ease-standard),
+    box-shadow var(--juxt-duration-normal) var(--juxt-ease-out),
+    background-color var(--juxt-duration-fast) var(--juxt-ease-standard);
+}
+
+.dark .j-control,
+[data-theme='dark'] .j-control {
+  background: var(--juxt-surface-sunken);
+}
+
+.j-control:hover:not(.is-disabled, :focus-within) {
+  border-color: var(--juxt-border-strong);
+}
+
+/*
+ * Focus: the border takes the accent and a soft halo grows out of it.
+ * The halo is the same colour at low alpha, so it reads as one gesture.
+ */
+.j-control:focus-within,
+.j-control.is-open {
+  border-color: var(--juxt-accent);
+  box-shadow: 0 0 0 3px var(--juxt-ring-soft);
+}
+
+.j-control.is-invalid {
+  border-color: var(--juxt-danger-border);
+}
+
+.j-control.is-invalid:hover:not(.is-disabled, :focus-within) {
+  border-color: var(--juxt-danger);
+}
+
+.j-control.is-invalid:focus-within,
+.j-control.is-invalid.is-open {
+  border-color: var(--juxt-danger);
+  box-shadow: 0 0 0 3px var(--juxt-danger-ring);
+}
+
+.j-control.is-disabled {
+  cursor: not-allowed;
+  background: var(--juxt-surface-sunken);
+  box-shadow: none;
+  color: var(--juxt-fg-disabled);
+}
+
+.j-control.is-readonly {
+  background: var(--juxt-surface-sunken);
+}
+
+.j-control--sm {
+  --j-control-height: var(--juxt-control-sm);
+  --j-control-px: var(--juxt-space-2);
+  --j-control-font: var(--juxt-text-sm);
+}
+
+.j-control--lg {
+  --j-control-height: var(--juxt-control-lg);
+  --j-control-px: var(--juxt-space-3);
+  --j-control-font: var(--juxt-text-md);
+}
+
+.j-control__adornment {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  color: var(--juxt-fg-muted);
+  transition: color var(--juxt-duration-fast) var(--juxt-ease-standard);
+}
+
+.j-control__adornment > svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.j-control:focus-within .j-control__adornment--leading {
+  color: var(--juxt-fg-secondary);
+}
+}

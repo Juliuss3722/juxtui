@@ -1,0 +1,237 @@
+/*
+ * Juxt design tokens
+ *
+ * One source of truth for colour, space, radius, type, elevation, motion and
+ * layering. Components never hardcode these values | they read them here.
+ *
+ * Light is the default. Dark applies under `.dark` or `[data-theme="dark"]`
+ * on any ancestor (usually <html>).
+ */
+
+:root,
+.light,
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --juxt-bg: #fcfcfc;
+  --juxt-surface: #ffffff;
+  --juxt-surface-raised: #ffffff;
+  --juxt-surface-sunken: #f4f4f5;
+  --juxt-surface-hover: #f1f1f2;
+  --juxt-surface-active: #e9e9eb;
+  --juxt-overlay: rgb(9 9 11 / 0.32);
+
+  /* Lines */
+  --juxt-border: #e4e4e7;
+  --juxt-border-subtle: #ededef;
+  --juxt-border-strong: #d1d1d6;
+
+  /* Text */
+  --juxt-fg: #09090b;
+  --juxt-fg-secondary: #52525b;
+  --juxt-fg-muted: #71717a;
+  --juxt-fg-disabled: #a1a1aa;
+
+  /* Ink | the inverted neutral used by primary actions */
+  --juxt-ink: #09090b;
+  --juxt-ink-hover: #27272a;
+  --juxt-ink-fg: #fafafa;
+
+  /* Accent */
+  --juxt-accent: #079d6b;
+  --juxt-accent-hover: #068a5e;
+  --juxt-accent-fg: #ffffff;
+  --juxt-accent-strong: #057a53;
+  --juxt-accent-text: #057a53;
+  --juxt-accent-soft: rgb(7 157 107 / 0.1);
+  --juxt-accent-border: rgb(7 157 107 / 0.28);
+  --juxt-ring: rgb(7 157 107 / 0.55);
+  --juxt-ring-soft: rgb(7 157 107 / 0.16);
+
+  /* Feedback */
+  --juxt-danger: #dc2626;
+  --juxt-danger-hover: #c21f1f;
+  --juxt-danger-fg: #ffffff;
+  --juxt-danger-text: #c81e1e;
+  --juxt-danger-soft: rgb(220 38 38 / 0.08);
+  --juxt-danger-border: rgb(220 38 38 / 0.28);
+  --juxt-danger-ring: rgb(220 38 38 / 0.16);
+
+  --juxt-warning: #d97706;
+  --juxt-warning-text: #a35a04;
+  --juxt-warning-soft: rgb(217 119 6 / 0.1);
+  --juxt-warning-border: rgb(217 119 6 / 0.28);
+
+  --juxt-info: #2563eb;
+  --juxt-info-text: #1d4fc4;
+  --juxt-info-soft: rgb(37 99 235 / 0.08);
+  --juxt-info-border: rgb(37 99 235 / 0.24);
+
+  --juxt-success: var(--juxt-accent);
+  --juxt-success-text: var(--juxt-accent-text);
+  --juxt-success-soft: var(--juxt-accent-soft);
+  --juxt-success-border: var(--juxt-accent-border);
+
+  /* Elevation | borders do most of the work, shadows only lift */
+  --juxt-shadow-xs: 0 1px 1px rgb(9 9 11 / 0.04);
+  --juxt-shadow-sm: 0 1px 2px rgb(9 9 11 / 0.05), 0 1px 1px rgb(9 9 11 / 0.03);
+  --juxt-shadow-md: 0 4px 12px -2px rgb(9 9 11 / 0.08), 0 2px 4px -2px rgb(9 9 11 / 0.05);
+  --juxt-shadow-lg: 0 16px 40px -8px rgb(9 9 11 / 0.16), 0 4px 12px -4px rgb(9 9 11 / 0.08);
+  --juxt-control-highlight: inset 0 1px 0 rgb(255 255 255 / 0.12);
+
+  --juxt-tooltip-bg: #18181b;
+  --juxt-tooltip-fg: #fafafa;
+  --juxt-tooltip-border: transparent;
+}
+
+.dark,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --juxt-bg: #09090b;
+  --juxt-surface: #111113;
+  --juxt-surface-raised: #18181b;
+  --juxt-surface-sunken: #0c0c0e;
+  --juxt-surface-hover: #1e1e22;
+  --juxt-surface-active: #26262b;
+  --juxt-overlay: rgb(0 0 0 / 0.6);
+
+  --juxt-border: #27272a;
+  --juxt-border-subtle: #1f1f23;
+  --juxt-border-strong: #3a3a40;
+
+  --juxt-fg: #fafafa;
+  --juxt-fg-secondary: #a1a1aa;
+  --juxt-fg-muted: #71717a;
+  --juxt-fg-disabled: #52525b;
+
+  --juxt-ink: #fafafa;
+  --juxt-ink-hover: #e4e4e7;
+  --juxt-ink-fg: #09090b;
+
+  --juxt-accent: #079d6b;
+  --juxt-accent-hover: #08b079;
+  --juxt-accent-fg: #ffffff;
+  --juxt-accent-strong: #067a53;
+  --juxt-accent-text: #1fc48a;
+  --juxt-accent-soft: rgb(7 157 107 / 0.14);
+  --juxt-accent-border: rgb(31 196 138 / 0.28);
+  --juxt-ring: rgb(31 196 138 / 0.6);
+  --juxt-ring-soft: rgb(7 157 107 / 0.24);
+
+  --juxt-danger: #d63a3f;
+  --juxt-danger-hover: #c53237;
+  --juxt-danger-fg: #ffffff;
+  --juxt-danger-text: #ff7a7e;
+  --juxt-danger-soft: rgb(229 72 77 / 0.14);
+  --juxt-danger-border: rgb(255 122 126 / 0.28);
+  --juxt-danger-ring: rgb(229 72 77 / 0.24);
+
+  --juxt-warning: #f5a524;
+  --juxt-warning-text: #f7b955;
+  --juxt-warning-soft: rgb(245 165 36 / 0.12);
+  --juxt-warning-border: rgb(247 185 85 / 0.26);
+
+  --juxt-info: #4f8cff;
+  --juxt-info-text: #85adff;
+  --juxt-info-soft: rgb(79 140 255 / 0.13);
+  --juxt-info-border: rgb(133 173 255 / 0.26);
+
+  --juxt-shadow-xs: 0 1px 1px rgb(0 0 0 / 0.3);
+  --juxt-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --juxt-shadow-md: 0 8px 20px -4px rgb(0 0 0 / 0.5), 0 2px 6px -2px rgb(0 0 0 / 0.4);
+  --juxt-shadow-lg: 0 24px 56px -12px rgb(0 0 0 / 0.7), 0 6px 16px -6px rgb(0 0 0 / 0.5);
+  --juxt-control-highlight: inset 0 1px 0 rgb(255 255 255 / 0.04);
+
+  --juxt-tooltip-bg: #26262b;
+  --juxt-tooltip-fg: #fafafa;
+  --juxt-tooltip-border: #3a3a40;
+}
+
+:root {
+  /* Type */
+  --juxt-font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --juxt-font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --juxt-text-2xs: 0.6875rem; /* 11 */
+  --juxt-text-xs: 0.75rem; /* 12 */
+  --juxt-text-sm: 0.8125rem; /* 13 */
+  --juxt-text-md: 0.875rem; /* 14 */
+  --juxt-text-lg: 1rem; /* 16 */
+  --juxt-text-xl: 1.125rem; /* 18 */
+  --juxt-text-2xl: 1.375rem; /* 22 */
+  --juxt-text-3xl: 1.75rem; /* 28 */
+  --juxt-text-4xl: 2.5rem; /* 40 */
+
+  --juxt-leading-tight: 1.2;
+  --juxt-leading-snug: 1.4;
+  --juxt-leading-normal: 1.55;
+
+  --juxt-weight-regular: 400;
+  --juxt-weight-medium: 500;
+  --juxt-weight-semibold: 600;
+
+  --juxt-tracking-tight: -0.011em;
+  --juxt-tracking-tighter: -0.022em;
+
+  /* Space | a 4px grid */
+  --juxt-space-0-5: 0.125rem; /* 2 */
+  --juxt-space-1: 0.25rem; /* 4 */
+  --juxt-space-1-5: 0.375rem; /* 6 */
+  --juxt-space-2: 0.5rem; /* 8 */
+  --juxt-space-2-5: 0.625rem; /* 10 */
+  --juxt-space-3: 0.75rem; /* 12 */
+  --juxt-space-4: 1rem; /* 16 */
+  --juxt-space-5: 1.25rem; /* 20 */
+  --juxt-space-6: 1.5rem; /* 24 */
+  --juxt-space-8: 2rem; /* 32 */
+  --juxt-space-10: 2.5rem; /* 40 */
+  --juxt-space-12: 3rem; /* 48 */
+
+  /* Control heights */
+  --juxt-control-xs: 1.5rem; /* 24 */
+  --juxt-control-sm: 1.75rem; /* 28 */
+  --juxt-control-md: 2.125rem; /* 34 */
+  --juxt-control-lg: 2.5rem; /* 40 */
+
+  /* Radius */
+  --juxt-radius-xs: 0.25rem; /* 4 */
+  --juxt-radius-sm: 0.375rem; /* 6 */
+  --juxt-radius-md: 0.5rem; /* 8 */
+  --juxt-radius-lg: 0.75rem; /* 12 */
+  --juxt-radius-full: 9999px;
+
+  /* Motion */
+  --juxt-duration-instant: 80ms;
+  --juxt-duration-fast: 120ms;
+  --juxt-duration-normal: 180ms;
+  --juxt-duration-slow: 240ms;
+
+  --juxt-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --juxt-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --juxt-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Distance things travel when they enter. Zeroed for reduced motion. */
+  --juxt-motion-shift: 4px;
+  --juxt-motion-scale: 0.97;
+
+  /* Layers */
+  --juxt-z-sticky: 20;
+  --juxt-z-dropdown: 50;
+  --juxt-z-overlay: 100;
+  --juxt-z-modal: 110;
+  --juxt-z-popover: 120;
+  --juxt-z-toast: 130;
+  --juxt-z-tooltip: 140;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* Things still fade | they just stop travelling. */
+    --juxt-motion-shift: 0px;
+    --juxt-motion-scale: 1;
+    --juxt-duration-slow: 140ms;
+    --juxt-duration-normal: 120ms;
+  }
+}
