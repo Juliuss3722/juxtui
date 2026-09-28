@@ -34,5 +34,11 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Check npm OIDC environment
+        run: |
+          node --version
+          npm --version
+          npm config get registry
+
       - name: Stage package
         run: npm stage publish
