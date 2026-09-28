@@ -1,6 +1,6 @@
 {
   "name": "@juxtui/ui",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Accessible, polished UI components for Nuxt & Vue 3.",
   "license": "MIT",
   "author": "Julius K.",
@@ -17,33 +17,26 @@
     "**/*.css"
   ],
   "exports": {
-    ".": "./src/index.ts",
-    "./editor": "./src/editor/index.ts",
-    "./nuxt": "./src/nuxt.ts",
-    "./style.css": "./src/styles/index.css",
-    "./tokens.css": "./src/styles/tokens.css",
-    "./tailwind.css": "./src/styles/tailwind.css"
-  },
-  "publishConfig": {
-    "access": "public",
-    "exports": {
-      ".": {
-        "types": "./dist/index.d.ts",
-        "import": "./dist/index.js"
-      },
-      "./editor": {
-        "types": "./dist/editor/index.d.ts",
-        "import": "./dist/editor.js"
-      },
-      "./nuxt": {
-        "types": "./dist/nuxt.d.ts",
-        "import": "./dist/nuxt.js"
-      },
-      "./style.css": "./dist/style.css",
-      "./tokens.css": "./dist/tokens.css",
-      "./tailwind.css": "./dist/tailwind.css"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
-    "types": "./dist/index.d.ts"
+    "./editor": {
+      "types": "./dist/editor/index.d.ts",
+      "import": "./dist/editor.js"
+    },
+    "./nuxt": {
+      "types": "./dist/nuxt.d.ts",
+      "import": "./dist/nuxt.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
   },
   "files": [
     "dist"
