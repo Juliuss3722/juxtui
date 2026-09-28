@@ -4,6 +4,14 @@
   "description": "Accessible, polished UI components for Nuxt & Vue 3.",
   "license": "MIT",
   "author": "Julius K.",
+  "homepage": "https://juliuss3722.github.io/juxt-library/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Juliuss3722/juxtui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Juliuss3722/juxtui/issues"
+  },
   "type": "module",
   "sideEffects": [
     "**/*.css"
